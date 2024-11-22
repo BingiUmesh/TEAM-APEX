@@ -1,0 +1,7 @@
+we will going to learn
+->the ant type
+->arrays
+->tuples
+->enums
+->functions
+->objects
