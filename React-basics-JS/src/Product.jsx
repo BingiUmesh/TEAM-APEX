@@ -1,22 +1,38 @@
 import React from "react";
 import "./Product.css";
 
-const Product = ({ title, price, features }) => {
-  // const list = features.map((feature) => <li>{feature}</li>);
-  let styles = { backgroundColor: price > 30000 && "yellow" };
+const Price = ({ price }) => {
+  let oldPrice = {
+    textDecoration: "line-through",
+  };
+  let newPrice = {
+    fontWeight: "bold",
+  };
+  let style = {
+    backgroundColor: "yellow",
+    // paddingBottom: "10px",
+    height: "2em",
+    borderBottomLeftRadius: "8px",
+    borderBottomRightRadius: "8px",
+  };
   return (
-    <div className="Product" style={styles}>
-      <h3>{title}</h3>
-      <h5>Price :{price}</h5>
-      {/* <p>{list}</p> */}
-      {/* <p>
-        {features.map((feature) => (
-          <li>{feature}</li>
-        ))}
-      </p> */}
+    <>
+      <div style={style}>
+        <span style={oldPrice}>{price[0]}</span>
+        &nbsp;&nbsp;&nbsp;
+        <span style={newPrice}>{price[1]}</span>
+      </div>
+    </>
+  );
+};
 
-      {/* write a condition if price is greater than 30000 it should display get 5% discount and also bg color yellow*/}
-      {price > 30000 && <p>Get 5% discount</p>}
+const Product = ({ productName, discription, price }) => {
+  return (
+    <div className="Product">
+      <h3>{productName}</h3>
+      <p>{discription[0]}</p>
+      <p>{discription[1]}</p>
+      <Price price={price} />
     </div>
   );
 };
