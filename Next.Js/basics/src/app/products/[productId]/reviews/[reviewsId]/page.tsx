@@ -10,7 +10,7 @@ const Page = ({
   // console.log(params.reviewsId); // Debugging line
 
   if (parseInt(params.reviewsId) > 1000) {
-    // console.log("Navigating to notFound page for reviewId:", params.reviewsId); // Debugging line
+    console.log("Navigating to notFound page for reviewId:", params.reviewsId); // Debugging line
     return notFound(); // Redirects to the "Not Found" page
   }
 
